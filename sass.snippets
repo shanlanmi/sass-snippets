@@ -16,6 +16,10 @@ priority 0
 # Selectors
 #
 
+snippet * "/* commit */" b
+/* ${1} */$0
+endsnippet
+
 snippet :fc "first-child" i
 :first-child
 endsnippet
@@ -64,57 +68,78 @@ snippet d "display"
 display: ${1:none}$0
 endsnippet
 
+snippet block "display"
+display: block$0
+endsnippet
+
+snippet flex "display: flex" 
+display: flex$0
+endsnippet
+
+snippet just "justify-content" 
+justify-content: ${1:flex-start/flex-end/center/space-between/space-around}$0
+endsnippet
+
 snippet position "position: type (position)"
 position: ${1:static/relative/absolute/fixed}$0
 endsnippet
 
 snippet por "position:relative"
-position: ${1:relative}$0
+position: relative$0
 endsnippet
 
 snippet poa "position"
-position: ${1:absolute}$0
+position: absolute$0
+endsnippet
+
+snippet pof "position:fixed"
+position: fixed$0
 endsnippet
 
 snippet h "height"
 height: ${1:0}$0
 endsnippet
 
+snippet h100 "height:100%"
+height: 100%$0
+endsnippet
+
 snippet w "width"
 width: ${1:0}$0
 endsnippet
 
+snippet w100 "width:100%"
+width: 100%$0
+endsnippet
+
 snippet maw "max-width"
-	max-width: ${1:80%}
-	$0
+max-width: ${1:80%}
+$0
 endsnippet
 
 snippet miw "min-width"
-	min-width: ${1:25%}
-	$0
+min-width: ${1:25%}
+$0
 endsnippet
 
-snippet top "top"
-	top: ${1:0}
-	${2}
+snippet t "top"
+top: ${1:0}
+${2}
 endsnippet
 
-snippet bot
-	bottom: ${1:0}
-	${2}
+snippet b
+bottom: ${1:0}
+${2}
 endsnippet
 
-snippet lef
-	left: ${1:0}
-	${2}
+snippet l
+left: ${1:0}
+${2}
 endsnippet
 
-snippet rig
-	right: ${1:0}
-	${2}
-endsnippet
-snippet p "padding"
-padding: ${1:0}$0
+snippet r
+right: ${1:0}
+${2}
 endsnippet
 
 snippet ! "!important CSS (!)"
@@ -154,7 +179,7 @@ margin: ${1:0}px ${2:0}px ${3:0}px ${4:0}px$0
 endsnippet
 
 snippet m2 "margin: V H (margin)"
-margin: ${1:0px} ${2:0px}$0
+margin: ${1:0px} ${2:auto}$0
 endsnippet
 
 
@@ -183,7 +208,7 @@ padding-top: ${1:${2:0}px}$0
 endsnippet
 
 snippet p4 "padding:   T R B L (padding)"
-padding: ${1:0}px ${2:0}px ${3:0}px ${4:0}px$0}
+padding: ${1:0}px ${2:0}px ${3:0}px ${4:0}px$0
 endsnippet
 
 snippet p2 "padding:   V H (padding)"
@@ -207,8 +232,7 @@ font-family: ${1:"Helvetica Neue", Helvetica, Arial, sans-serif}$0
 endsnippet
 
 snippet fs "font-size"
-	font-size: ${1:14px}
-	$0
+font-size: ${1:14px}$0
 endsnippet
 
 snippet fst "font-style:   normal:italic:oblique (font)"
@@ -235,8 +259,8 @@ snippet bxsh "box-shadow: color-hex x y blur (text)"
 box-shadow: ${1:${2:offset-x} ${3:offset-y} ${4:blur} ${5:spread} ${6:color}}$0
 endsnippet
 
-snippet co "color" 
-color: #${1:999}$0
+snippet c "color" 
+color: ${2:#${1:999}}$0
 endsnippet
 
 snippet ta "text-align: left:center:right (txt)"
@@ -370,6 +394,10 @@ snippet bt "border-top: size style color (border)"
 border-top: ${1:1}px ${2:solid} #${3:999}$0
 endsnippet
 
+snippet bdr "broder-radius" 
+border-radius: ${1:4}px$0
+endsnippet
+
 snippet btl "border-top-left-radius" 
 border-top-left-radius: ${1:4}px$0
 endsnippet
@@ -394,7 +422,7 @@ snippet bw "border-bottom-width: size style color (border)"
 border-width: ${1:1}px$0
 endsnippet
 
-snippet bco "border-color"
+snippet bdc "border-color"
 border-color: ${1:999}$0
 endsnippet
 
@@ -463,7 +491,7 @@ $0
 endsnippet
 
 snippet import "@import" 
-@import "$0"
+@import $0
 endsnippet
 
 snippet @ff "font-face"

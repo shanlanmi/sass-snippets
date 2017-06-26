@@ -1,0 +1,381 @@
+priority 0
+
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+snippet get "Get Elements"
+getElement${1/(T)|.*/(?1:s)/}By${1:T}${1/(T)|(I)|.*/(?1:agName)(?2:d)/}('$2')
+endsnippet
+
+snippet '':f "object method string"
+'${1:${2:#thing}:${3:click}}': function(element) {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
+snippet :f "Object Method"
+${1:method_name}: function(${3:attribute}) {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
+snippet :, "Object Value JS"
+${1:value_name}: ${0:value},
+endsnippet
+
+snippet : "Object key key: 'value'"
+${1:key}: ${2:"${3:value}"}${4:, }
+endsnippet
+
+snippet proto "Prototype (proto)"
+${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
+	${VISUAL}$0
+};
+
+endsnippet
+
+snippet for "for (...) {...} (counting up)" b
+for (var ${1:i} = 0; $1 < ${3:${2:Things}.length}; $1++) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet ford "for (...) {...} (counting down, faster)" b
+for (var ${2:i} = ${1:Things.length} - 1; $2 >= 0; $2--) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fun "function (fun)"
+function ${1:functionName}(${2:argument}) {
+	${VISUAL}$0
+}$3
+endsnippet
+
+snippet vf "Function assigned to var"
+${1:var }${2:functionName} = function(${3}) {
+	${VISUAL}$0
+};
+endsnippet
+
+snippet af "Anonymous Function" i
+function($1) {
+	${VISUAL}$0
+}$2
+endsnippet
+
+snippet iife "Immediately-Invoked Function Expression (iife)"
+(function(${1:res}) {
+	${VISUAL}$0
+}(${2:$1}));
+endsnippet
+
+snippet timeout "setTimeout function"
+setTimeout(function() {
+	${VISUAL}$0
+}${2:.bind(${3:this})}, ${1:10});
+endsnippet
+
+snippet fi "for prop in obj using hasOwnProperty" b
+for (${1:prop} in ${2:obj}){
+	if ($2.hasOwnProperty($1)) {
+		${VISUAL}$0
+	}
+}
+endsnippet
+
+# Snippets for Console Debug Output
+
+snippet ca "console.assert" b
+console.assert(${1:assertion}, ${2:"${3:message}"});
+endsnippet
+
+snippet cclear "console.clear" b
+console.clear();
+endsnippet
+
+snippet cd "console.dir" b
+console.dir(${1:res});
+endsnippet
+
+snippet cdirx "console.dirxml" b
+console.dirxml(${1:object});
+endsnippet
+
+snippet ce "console.error" b
+console.error(${1:err});
+endsnippet
+
+snippet cgroup "console.group" b
+console.group("${1:label}");
+${VISUAL}$0
+console.groupEnd();
+endsnippet
+
+snippet cgroupc "console.groupCollapsed" b
+console.groupCollapsed("${1:label}");
+${VISUAL}$0
+console.groupEnd();
+endsnippet
+
+snippet ci "console.info" b
+console.info(${1:${2:res}});
+endsnippet
+
+snippet cl "console.log" b
+console.log(${1:"${2:value}"});
+endsnippet
+
+snippet cprof "console.profile" b
+console.profile("${1:label}");
+${VISUAL}$0
+console.profileEnd();
+endsnippet
+
+snippet ctable "console.table" b
+console.table(${1:"${2:value}"});
+endsnippet
+
+snippet ctime "console.time" b
+console.time("${1:label}");
+${VISUAL}$0
+console.timeEnd("$1");
+endsnippet
+
+snippet ctimestamp "console.timeStamp" b
+console.timeStamp("${1:label}");
+endsnippet
+
+snippet ctrace "console.trace" b
+console.trace();
+endsnippet
+
+snippet cw "console.warn" b
+console.warn(${1:"${2:value}"});
+endsnippet
+
+# AMD (Asynchronous Module Definition) snippets
+
+snippet def "define an AMD module"
+define(${1:optional_name, }[${2:'jquery'}], ${3:callback});
+endsnippet
+
+snippet req "require an AMD module"
+require([${1:'dependencies'}], ${2:callback});
+endsnippet
+
+# My JS
+
+snippet ass "assert" b
+assert(${1:condition}, "${2:commit}");
+endsnippet
+
+snippet senan "Description" b
+zhangshenglan
+endsnippet
+
+snippet forEach ".forEach()" w
+forEach(function(${1:params}) {
+	${2:return;}
+});
+endsnippet
+
+snippet iif "Immediately-Invoked Function" i
+(function(${1:res}) {
+	${VISUAL}$0
+});
+endsnippet
+
+snippet iifp "Immediately-Invoked Function" i
+(function(${1:res}) {
+	$0
+	${2:resolve($1);}
+}).catch(function(err) {
+	reject(err);
+})
+endsnippet
+
+snippet ife "If...eles..." i
+if (${1:res}) {
+	${2:return;}
+} else {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet self "var self = this" b
+var self = this;
+endsnippet
+
+snippet comment "write a api comment" b
+/**
+* ${1:Description.}
+* @param {${2:number}} ${3:num1 The first number.}
+* @returns {${4:number}} ${5:The sum of the two numbers.}
+*/
+endsnippet
+
+snippet strict "Use strict" b
+"use strict";
+endsnippet
+
+#
+# nodeJS
+#
+
+snippet varq "assign a CommonJS-style module to a var" b
+var ${1:variable} = require('${2:$1}');$0
+endsnippet
+
+snippet iferr "if (err)" i
+if (err) { return ${1:console.error}(err); }$0
+endsnippet
+
+snippet exf "module.exports" b
+module.exports = function(${1:arguments}){
+	$0
+};
+endsnippet
+
+snippet setTimeout "setTimeout" b
+setTimeout(function(${1}) {
+	$0
+}, ${2:2000});
+endsnippet
+
+#
+# bluebird
+#
+snippet bluebird "require. bluebird" b
+var Promise = require('bluebird');$0
+endsnippet
+
+snippet newP "new Promise" i
+${1:return }new Promise(function (resolve, reject) {
+	$0
+});
+endsnippet
+
+snippet Pjoin "Promise.join" i
+${1:var ${2:promise1} = }Promise.join(${3:params}, function($3) {
+	$0
+})${4:.catch(function(err) {
+	${5:callback(err);}
+});}
+endsnippet
+
+snippet catch "catch err and reject" i
+catch(function(err) {
+	${1:reject}(err);$0
+});
+endsnippet
+
+snippet .then "then(function(res)..." i
+${1:\})}.then(function(res) {
+	$0
+${2:\}).catch(function(err) {
+  return ${3:reject(err);}
+});}
+endsnippet
+
+#
+# loopback
+#
+snippet raw "execute raw sql" i
+${1:SearchHistory}.dataSource.connector.execute(sql, function(err, res) {
+	if (err) { reject(err); }
+	${2:console.dir(res);}
+	${3:resolve(res);}
+});
+endsnippet
+
+#
+# npm
+#
+snippet lodash "require lodash" b
+var _ = require('lodash');
+endsnippet
+
+#
+# mocha
+#
+snippet desc "describe"
+describe("${1:describe}", function() {
+	$0
+});
+endsnippet
+
+snippet it "it"
+it("${1:It}", function() {
+	$0
+});
+endsnippet
+
+snippet bee "beforeEach"
+beforeEach(function() {
+	$0
+});
+endsnippet
+
+snippet afe "afterEach"
+afterEach(function() {
+	$0
+});
+endsnippet
+
+snippet before "before"
+before(function() {
+	$0
+});
+endsnippet
+
+snippet after "after"
+after(function() {
+	$0
+});
+endsnippet
+
+#
+# expect
+#
+
+snippet ebe "expect(x).toBe(y)"
+expect($1).toBe($2);
+endsnippet
+
+snippet eeq "expect(x).toEqual(y)"
+expect($1).toEqual($2);
+endsnippet
+
+snippet ethre "expect(x).toThrowError(y)"
+expect(() => $1).toThrowError($2);
+endsnippet
+
+snippet etruthy "expect(x).toBeTruthy(y)"
+expect($1).toBeTruthy($2);
+endsnippet
+
+snippet efalsy "expect(x).toBeFalsy(y)"
+expect($1).toBeFalsy($2);
+endsnippet
+
+# assert
+snippet aeq "assert.equal"
+assert.equal($1, $2);
+endsnippet
+
+snippet adeq "assert.deepEqual"
+assert.deepEqual($1, $2);
+endsnippet
+
+snippet atrue "assert.isTrue"
+assert.isTrue($1);
+endsnippet
+
+snippet afalse "assert.isFalse"
+assert.isFalse($1);
+endsnippet
+
+snippet athr "assert.throws"
+assert.throws(() => $1, $2);
+endsnippet

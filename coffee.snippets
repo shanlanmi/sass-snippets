@@ -1,0 +1,30 @@
+#priority: 0
+
+snippet $ "$scope" i
+$scope.$0
+endsnippet
+
+snippet $r "$scope" i
+$rootScope.$0
+endsnippet
+
+snippet - "->" i
+->
+	$0
+endsnippet
+
+snippet ## "commit title" b
+# ==========> $1 <==========$0
+endsnippet
+
+snippet bug "debuggeer" b
+debugger
+endsnippet
+
+snippet { "{{ }}" i
+{{$0}}
+endsnippet
+
+snippet local "localStorage" b
+$localStorage.${1} =$0
+endsnippet

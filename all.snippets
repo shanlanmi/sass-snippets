@@ -1,0 +1,76 @@
+priority 0
+
+## options:
+# b - Beginning of line
+# i - In-word
+# w - Word boundary
+# r - Regular expression
+# t - Do not expand tabs
+# s - Remove whitespace
+# m - Trim all whitespace
+# e - Context snippets, python?
+# A - automatically
+#
+# Must escape`\`: ```, `{`, `$`, `\`
+
+## ${1:1}
+# text-shadow: ${1:${2:color} ${3:offset-x} ${4:offset-y} ${5:blur}};$0
+#
+# snippet letterr
+# Dear $1,
+# $0
+# Yours sincerely,
+# $2
+# endsnippet
+#
+# snippet env
+# \begin{${1:enumerate}}
+#     $0
+# \end{$1}
+# endsnippet
+
+# Today is the `date +%d.%m.%y`.
+
+## global
+# global !p
+# def upper_right(inp):
+#     return (15 - 2 * len(inp))*' ' + inp.upper()
+# endglobal
+# 
+# snippet wow
+# ${1:Text}`!p snip.rv = upper_right(t[1])`
+# endsnippet
+
+## Replacement String
+#  \u - Uppercase next letter
+#  \l - Lowercase next letter
+#  \U - Uppercase everything till the next \E
+#  \L - Lowercase everything till the next \E
+#  \E - End upper or lowercase started with \L or \U
+#  \n - A newline
+#  \t - A literal tab
+# ------------------- SNIP -------------------
+# snippet title "Title transformation"
+# ${1:a text}
+# ${1/\w+\s*/\u$0/}
+# endsnippet
+# ------------------- SNAP -------------------
+# title<tab>big small ->
+# big small
+# Big small
+
+snippet zsl "my name" w
+zhangshenglan
+endsnippet
+
+snippet JS "JavaScript" w
+JavaScript$0
+endsnippet
+
+snippet PS "PathSource" w
+PathSource$0
+endsnippet
+
+snippet vreq "assign a CommonJS-style module to a var" b
+var ${1:variable} = require('${2}');$0
+endsnippet
